@@ -9,18 +9,15 @@ class Obstacol {
   Obstacol(float pozXin, float caleYin) {
     pozX = pozXin;
     caleY = random(inaltimeCale + 20, height - inaltimeCale - 20);
-
   }
- 
+
 
   void move() {
     pozX=pozX + vitezaX * directieX;
     if (pozX < -latimeObstacol) {
       pozX = width + 2 * latimeObstacol;
       caleY = random(inaltimeCale + 20, height - inaltimeCale - 20);
-      
     }
-
   }
 
   void display() {
@@ -142,8 +139,7 @@ class Obstacol {
     stroke(0, 0, 0, 70);
     strokeWeight(5);
     line(pozX+latimeObstacol-13, caleY+inaltimeCale+45, pozX+latimeObstacol-13, height-3);
-
-}
+  }
   boolean trecereObstacol(float centruX) {
     if (centruX==pozX) {
       return true;
@@ -152,7 +148,7 @@ class Obstacol {
   }
 
 
-  boolean coleziune(float centruX, float centruY, float raza) {
+  boolean coliziune(float centruX, float centruY, float raza) {
     if ( centruX + raza >= pozX  && centruY - raza <= caleY-inaltimeCale &&  centruX - raza <= pozX+latimeObstacol) {
       return true;
     }
